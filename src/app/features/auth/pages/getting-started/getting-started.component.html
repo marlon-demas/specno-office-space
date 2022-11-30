@@ -1,0 +1,26 @@
+<div
+  class="d-flex flex-column align-items-center justify-content-between h-100"
+>
+  <h1>Office Space</h1>
+  <div class="d-flex flex-column align-items-center">
+    <ion-img src="/assets/images/logo.svg" class="w-75"></ion-img>
+    <h2 class="text-center">Welcome to Office Space Management</h2>
+    <p>Create and manage your office!</p>
+  </div>
+  <div class="px-4 py-2 w-100">
+    <ion-button
+      color="primary"
+      expand="block"
+      class="mb-2"
+      (click)="handleRouteToRegister()"
+      >Get Started</ion-button
+    >
+    <ion-button
+      color="primary"
+      fill="clear"
+      expand="block"
+      (click)="handleRouteToHome()"
+      >Skip for now</ion-button
+    >
+  </div>
+</div>

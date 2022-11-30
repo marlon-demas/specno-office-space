@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">book-a-barber</string>
+    <string name="title_activity_main">book-a-barber</string>
+    <string name="package_name">com.marlon.bookabarber.app</string>
+    <string name="custom_url_scheme">com.marlon.bookabarber.app</string>
+</resources>

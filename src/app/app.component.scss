@@ -1,0 +1,18 @@
+.l-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  max-width: var(--screen-width);
+  margin: 0 auto;
+
+  .l-content {
+    height: 100%;
+    max-width: var(--screen-width);
+    width: 100%;
+    position: relative;
+    margin-bottom: 0;
+    margin-bottom: constant(safe-area-inset-bottom);
+    margin-bottom: env(safe-area-inset-bottom);
+  }
+}

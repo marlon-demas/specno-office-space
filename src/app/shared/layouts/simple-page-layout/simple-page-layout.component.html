@@ -1,0 +1,30 @@
+<div
+  class="d-flex flex-column align-items-center justify-content-between h-100"
+>
+  <ion-header class="ion-no-border" mode="ios">
+    <ion-toolbar color="translucent">
+      <ion-buttons slot="start">
+        <ion-button (click)="handleBack()">
+          <ion-icon
+            slot="icon-only"
+            class="g-fs-24 pt-1"
+            [class.invisible]="hideBack"
+            src="/assets/icon/back-arrow.svg"
+          ></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-title>
+        <h1>
+          <ng-content select="[header]"></ng-content>
+          {{ headerText }}
+        </h1>
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ng-content select="[content]"></ng-content>
+  </ion-content>
+  <ion-footer class="ion-padding ion-no-border">
+    <ng-content select="[footer]"></ng-content>
+  </ion-footer>
+</div>

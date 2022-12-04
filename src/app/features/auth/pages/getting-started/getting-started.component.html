@@ -1,13 +1,17 @@
-<div
-  class="d-flex flex-column align-items-center justify-content-between h-100"
+<app-simple-page-layout
+  headerText="Office Space"
+  [hideBack]="true"
+  class="h-100"
 >
-  <h1>Office Space</h1>
-  <div class="d-flex flex-column align-items-center">
+  <div
+    content
+    class="d-flex flex-column align-items-center justify-content-center h-100"
+  >
     <ion-img src="/assets/images/logo.svg" class="w-75"></ion-img>
-    <h2 class="text-center">Welcome to Office Space Management</h2>
-    <p>Create and manage your office!</p>
+    <h2 class="g-fw-700 text-center">Welcome to Office Space Management</h2>
+    <ion-text>Create and manage your office!</ion-text>
   </div>
-  <div class="px-4 py-2 w-100">
+  <div footer>
     <ion-button
       color="primary"
       expand="block"
@@ -23,4 +27,4 @@
       >Skip for now</ion-button
     >
   </div>
-</div>
+</app-simple-page-layout>

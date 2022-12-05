@@ -22,6 +22,7 @@ import { AppComponent } from './app.component';
 import { getPageAnimation } from './core/consts/animations.const';
 import * as CordovaSQLLiteDriver from 'localforage-cordovasqlitedriver';
 import { Drivers } from '@ionic/storage';
+import { InAppBrowser } from '@awesome-cordova-plugins/in-app-browser/ngx';
 //#endregion
 
 @NgModule({
@@ -38,7 +39,7 @@ import { Drivers } from '@ionic/storage';
       driverOrder: [CordovaSQLLiteDriver._driver, Drivers.IndexedDB],
     })
   ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, InAppBrowser],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

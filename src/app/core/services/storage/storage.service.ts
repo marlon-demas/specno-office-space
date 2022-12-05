@@ -6,7 +6,7 @@ import * as CordovaSQLiteDriver from 'localforage-cordovasqlitedriver';
   providedIn: 'root',
 })
 export class StorageService {
-  private _storage?: Storage;
+  private _storage: Storage;
 
   constructor(private storage: Storage) { }
 

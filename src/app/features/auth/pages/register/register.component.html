@@ -1,3 +1,78 @@
-<p>
-  register works!
-</p>
+<app-simple-page-layout headerText="Office Space" class="h-100">
+  <span header>
+    <ion-icon src="/assets/images/logo.svg"></ion-icon>
+  </span>
+  <div
+    content
+    class="d-flex flex-column align-items-center justify-content-center ion-padding gap-3 h-100"
+  >
+    <form #registerForm="ngForm" class="d-flex flex-column gap-3 w-100">
+      <app-input
+        name="email"
+        placeholder="Email"
+        type="email"
+        inputMode="email"
+        [(ngModel)]="email"
+        [pattern]="EmailRegex"
+        [required]="true"
+        [errorMessages]="{
+          required: 'Email is required',
+          pattern: 'Not a valid email'
+        }"
+      ></app-input>
+      <app-input
+        name="password"
+        placeholder="Password"
+        type="password"
+        [(ngModel)]="password"
+        [required]="true"
+        [pattern]="PasswordRegex"
+        [validators]="PasswordValidator"
+        [errorMessages]="{
+          required: 'Password is required'
+        }"
+        [passwordErrors]="{
+          length: '8 Characters',
+          uppercase: '1 Capital',
+          digit: '1 Number',
+          specialCharacter: '1 Symbol'
+        }"
+      ></app-input>
+      <app-input
+        name="confirmPassword"
+        placeholder="Confirm Password"
+        type="password"
+        [(ngModel)]="confirmPassword"
+        [required]="true"
+        [pattern]="ConfirmPasswordRegex"
+        [errorMessages]="{
+          required: 'Confirm Password is required',
+          pattern: 'Passwords do not match'
+        }"
+      ></app-input>
+    </form>
+    <p>
+      Have an account?
+      <ion-text color="primary" (click)="handleRouteToLogin()">Log In</ion-text>
+    </p>
+  </div>
+  <div footer class="text-center">
+    <p>
+      By Signing Up you agree to our
+      <ion-text color="primary" (click)="handleOpenPrivacyPolicy()"
+        >Terms and Conditions</ion-text
+      >
+      &
+      <ion-text color="primary" (click)="handleOpenPrivacyPolicy()"
+        >Privacy Policy</ion-text
+      >
+    </p>
+    <ion-button
+      [disabled]="!registerForm.valid"
+      class="primary"
+      expand="block"
+      (click)="handleSignUp()"
+      >Sign Up</ion-button
+    >
+  </div>
+</app-simple-page-layout>

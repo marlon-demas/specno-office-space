@@ -1,0 +1,44 @@
+<ion-item
+  lines="none"
+  class="l-input"
+  [class.border-danger]="input.errors && input.touched"
+>
+  <ion-input
+    #input="ngModel"
+    [name]="name"
+    [placeholder]="placeholder"
+    [required]="required"
+    [type]="type"
+    [inputmode]="inputMode"
+    [pattern]="pattern"
+    [(ngModel)]="value"
+    autofocus
+  ></ion-input>
+</ion-item>
+
+<ng-container *ngIf="input.errors && errorMessages">
+  <ng-container *ngFor="let errorMessage of errorMessages | keyvalue">
+    <ion-note
+      color="danger"
+      *ngIf="input.errors[errorMessage.key] && input.touched"
+      class="ion-padding-start"
+    >
+      {{ errorMessage.value }}
+    </ion-note>
+  </ng-container>
+</ng-container>
+
+<div class="d-flex gap-2">
+  <ng-container *ngIf="input.value && passwordErrors && input.dirty">
+    <div *ngFor="let errorMessage of passwordErrors | keyvalue">
+      <ion-icon
+        [src]="
+          input.errors && input.errors[errorMessage.key]
+            ? '/assets/icon/invalid-tick.svg'
+            : '/assets/icon/valid-tick.svg'
+        "
+      ></ion-icon>
+      <span>{{ errorMessage.value }}</span>
+    </div>
+  </ng-container>
+</div>

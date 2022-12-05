@@ -17,11 +17,10 @@ import { IonicModule } from '@ionic/angular';
 })
 export class InputComponent implements AfterViewInit, ControlValueAccessor {
 
-  @Output() @ViewChild('input') ngModel?: NgModel;
-  @Input() name!: string;
-  @Input() placeholder?: string;
-  @Input() type!: 'text' | 'password' | 'number' | 'email' | 'tel';
-  @Input() disabled = false;
+  @Output() @ViewChild('input') ngModel: NgModel;
+  @Input() name: string;
+  @Input() placeholder: string;
+  @Input() type: 'text' | 'password' | 'number' | 'email' | 'tel';
   @Input() inputMode:
     | 'decimal'
     | 'email'
@@ -32,17 +31,18 @@ export class InputComponent implements AfterViewInit, ControlValueAccessor {
     | 'text'
     | 'url'
     | undefined;
-  @Input() pattern: string | RegExp = '';
-  @Input() required = false;
-  @Input() errorMessages?: {
+  @Input() pattern: string | RegExp;
+  @Input() disabled: boolean;
+  @Input() required: boolean;
+  @Input() errorMessages: {
     [key: string]: string;
   }
-  @Input() passwordErrors?: {
+  @Input() passwordErrors: {
     [key: string]: string;
   }
-  @Input() validators?: ValidatorFn | ValidatorFn[];
+  @Input() validators: ValidatorFn | ValidatorFn[];
 
-  _value!: string;
+  _value: string;
   @Input() set value(_value: string) {
     this._value = _value;
     this.onChange(_value);
@@ -57,14 +57,14 @@ export class InputComponent implements AfterViewInit, ControlValueAccessor {
 
   ngAfterViewInit() {
     if (this.validators) {
-      this.ngModel?.control.addValidators(this.validators);
-      this.ngModel?.control.updateValueAndValidity();
+      this.ngModel.control.addValidators(this.validators);
+      this.ngModel.control.updateValueAndValidity();
     }
   }
 
   // #region ControlValueAccessor Properties
-  onChange: any = () => { };
-  onTouch: any = () => { };
+  onChange: any = () => undefined;
+  onTouch: any = () => undefined;
   writeValue(value: any) {
     this.value = value;
   }

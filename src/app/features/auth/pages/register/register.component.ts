@@ -1,5 +1,5 @@
 import { InAppBrowser } from '@awesome-cordova-plugins/in-app-browser/ngx';
-import { Component, AfterViewInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { NavController, Platform } from '@ionic/angular';
 import { EmailRegex, PasswordRegex } from '../../../../core/consts/regex';
 import { PATHS } from '../../../../core/consts/paths.const';
@@ -20,9 +20,9 @@ export class RegisterComponent {
   }
   PasswordValidator = PasswordValidator;
 
-  email?: string;
-  password = '';
-  confirmPassword?: string;
+  email: string;
+  password: string;
+  confirmPassword: string;
 
   constructor(private navController: NavController, private inAppBrowser: InAppBrowser, private platform: Platform) { }
 

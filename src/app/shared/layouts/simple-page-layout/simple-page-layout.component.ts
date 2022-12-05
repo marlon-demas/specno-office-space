@@ -12,8 +12,8 @@ export class SimplePageLayoutComponent {
 
   constructor(private navController: NavController) { }
 
-  @Input() headerText?: string;
-  @Input() hideBack?: boolean;
+  @Input() headerText: string;
+  @Input() hideBack: boolean;
 
   PATHS = PATHS;
 

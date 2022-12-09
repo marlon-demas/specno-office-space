@@ -5,6 +5,9 @@ import { EmailRegex, PasswordRegex } from '../../../../core/consts/regex';
 import { PATHS } from '../../../../core/consts/paths.const';
 import { PRIVACY_POLICY_ROUTE } from '../../../../core/consts/external-routes';
 import { PasswordValidator } from '../../../../core/consts/validators';
+import { Store } from '@ngrx/store';
+import { State } from '../../../../core/ngrx';
+import { userActions } from "../../../../core/ngrx/user";
 
 @Component({
   selector: 'app-register',
@@ -24,7 +27,12 @@ export class RegisterComponent {
   password: string;
   confirmPassword: string;
 
-  constructor(private navController: NavController, private inAppBrowser: InAppBrowser, private platform: Platform) { }
+  constructor(
+    private navController: NavController,
+    private inAppBrowser: InAppBrowser,
+    private platform: Platform,
+    private store: Store<State>
+  ) { }
 
   handleRouteToLogin() {
     this.navController.navigateForward(PATHS.auth.Login._Path);
@@ -39,6 +47,6 @@ export class RegisterComponent {
   }
 
   handleSignUp() {
-    // TODO: Create sign up action
+    this.store.dispatch(userActions.ReqRegisterWithEmail({ email: this.email, password: this.password }));
   }
 }

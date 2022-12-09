@@ -1,9 +1,9 @@
-import { APP_INITIALIZER, NgModule } from '@angular/core';
-import { Store, StoreModule } from '@ngrx/store';
+import { NgModule } from '@angular/core';
+import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../../../environments/environment';
 import { EffectsModule } from '@ngrx/effects';
-import { effects, reducers, State } from '../ngrx';
+import { effects, reducers } from '../ngrx';
 
 @NgModule({
   imports: [

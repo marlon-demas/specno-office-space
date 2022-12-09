@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
 import { distinctUntilChanged, map, mergeMap, switchMap, tap, catchError } from 'rxjs/operators';
 import { State } from '..';
 import { StorageService } from '../../services/storage/storage.service';
+import { ErrorService } from '../../services/error/error.service';
 
 @Injectable()
 export class HydrationEffects implements OnInitEffects {
@@ -38,9 +39,11 @@ export class HydrationEffects implements OnInitEffects {
   constructor(
     private actions$: Actions,
     private store: Store<State>,
-    private storageService: StorageService
+    private storageService: StorageService,
+    private errorService: ErrorService,
   ) { }
   ngrxOnInitEffects(): Action {
+    this.errorService.listenToNGRXErrors();
     return hydrationActions.ReqHydrate();
   }
 }

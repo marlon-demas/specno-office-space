@@ -2,11 +2,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { AuthRoutingModule } from './auth-routing.module';
-import { GettingStartedComponent } from './pages/getting-started/getting-started.component';
+import { GettingStartedComponent } from './components/getting-started/getting-started.component';
 import { IonicModule } from '@ionic/angular';
 import { AuthComponent } from './auth.component';
-import { SimplePageLayoutModule } from '../../shared/layouts/simple-page-layout/simple-page-layout.component';
-import { RegisterComponent } from './pages/register/register.component';
+import { SimplePageLayoutModule } from '../../shared/components/simple-page-layout/simple-page-layout.component';
+import { RegisterComponent } from './components/register/register.component';
 import { InputModule } from '../../shared/components/input/input.component';
 import { FormsModule } from '@angular/forms';
 

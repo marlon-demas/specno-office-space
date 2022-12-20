@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { PATHS } from '../../core/consts/paths.const';
-import { GettingStartedComponent } from './pages/getting-started/getting-started.component';
-import { LoginComponent } from './pages/login/login.component';
-import { RegisterComponent } from './pages/register/register.component';
-import { ForgetPasswordComponent } from './pages/forget-password/forget-password.component';
+import { GettingStartedComponent } from './components/getting-started/getting-started.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import { ForgetPasswordComponent } from './components/forget-password/forget-password.component';
 
 const routes: Routes = [
   // #region Features

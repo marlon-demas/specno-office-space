@@ -1,6 +1,6 @@
 /* eslint-disable */
 export default {
-  displayName: 'book-a-barber',
+  displayName: 'specno-office-space',
   preset: '../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
@@ -9,7 +9,7 @@ export default {
       stringifyContentPathRegex: '\\.(html|svg)$',
     },
   },
-  coverageDirectory: '../../coverage/apps/book-a-barber',
+  coverageDirectory: '../../coverage/apps/specno-office-space',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': 'jest-preset-angular',
   },
